@@ -36,8 +36,17 @@ ${answers.Tests}
 
 ## License
 This project is licensed under the ${answers.License} license.
-`;
-}
+
+## Questions?
+    
+For any questions, please contact me with the information below:
+   
+GitHub: ${answers.Github}
+  
+Email: ${answers.Email}
+  
+`};
+
 
 
 module.exports = generateMarkdown;

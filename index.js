@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const generateMarkdown = require('./generateMarkdown');
+const generateMarkdown = require('./generateMarkdown.js');
 
 inquirer
     .prompt([
@@ -57,8 +57,32 @@ inquirer
             message: 'Choose a License:',
             name: 'License',
             choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
+        },
+        {
+            type: 'input',
+            message: 'Enter GitHub Username',
+            name: 'GitHub',
+            validate: (answer) => {
+                if (answer.length < 1) {
+                    return console.log("A valid Description is required.");
+                }
+                return true;
+            }
+        },
+        {
+            type: 'input',
+            message: 'Enter Email',
+            name: 'Email',
+            validate: (answer) => {
+                if (answer.length < 1) {
+                    return console.log("A valid Description is required.");
+                }
+                return true;
+            }
         }
+
     ])
+    
     .then((answers) => {
         writeReadMeFile(answers);
     });
