@@ -29,11 +29,6 @@ inquirer
         },
         {
             type: 'input',
-            message: 'Enter Table of Contents:',
-            name: 'Table of Contents',
-        },
-        {
-            type: 'input',
             message: 'Enter Installation Instructions:',
             name: 'Installation',
         },
@@ -83,23 +78,45 @@ inquirer
 
     ])
     
-    .then((answers) => {
-        writeReadMeFile(answers);
-    });
+.then((answers) => {
+    writeReadMeFile(answers);
+});
 
-    function writeReadMeFile(answers) {
-        // Convert the answers object to a string
-        const readmeContent = generateMarkdown(answers);
-      
-        // Write the content to a README.md file
-        fs.writeFile('README.md', readmeContent, (err) => {
-          if (err) {
-            console.error(err);
-            return;
-          }
-          console.log('README.md generated successfully!');
-        });
-      }
+if (answers.Installation !== '') {
+    var tocI = `[Installation](#installation)`;
+    } else {
+    var tocI = '';
+    };
+if (answers.Usage !== '') {
+    var tocU = `[Usage](#usage)`;
+    } else {
+    var tocU = '';
+    };
+if (answers.Contributing !== '') {
+    var tocC = `[Contributing](#contributing)`;
+    } else {
+    var tocC = '';
+    };
+if (answers.Tests !== '') {
+        var tocT = `[Tests](#tests)`;
+    } else {
+        var tocT = '';
+    };
+module.exports = 
+
+function writeReadMeFile(answers) {
+    // Convert the answers object to a string
+    const readmeContent = generateMarkdown(answers);
+    
+    // Write the content to a README.md file
+    fs.writeFile('README.md', readmeContent, (err) => {
+        if (err) {
+        console.error(err);
+        return;
+        }
+        console.log('README.md generated successfully!');
+    });
+    }
 
 // TODO: Create a function to initialize app
 function init() {}

@@ -12,15 +12,20 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(answers) {
- 
-  return `
+   return `
+## Table of Contents
+${tocI}
+
+${tocU}
+
+${tocC}
+
+${tocT}
+
 # ${answers.Title}
 
 ## Description
 ${answers.Description}
-
-## Table of Contents
-${answers['Table of Contents']}
 
 ## Installation Instructions
 ${answers.Installation}
@@ -41,7 +46,7 @@ This project is licensed under the ${answers.License} license.
     
 For any questions, please contact me with the information below:
    
-GitHub: ${answers.Github}
+GitHub Link: https://github.com/${answers.GitHub} 
   
 Email: ${answers.Email}
   
