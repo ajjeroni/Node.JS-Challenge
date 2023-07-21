@@ -41,9 +41,20 @@ function renderLicenseSection(answers) {
 }
 
 // TODO: Create a function to generate markdown for README
+function tableOfContents(answers) {
+   let tocString = ''
+   if(answers.Description !== '') {
+      tocString += `[Description](#discription)\n` 
+   }
+
+   return tocString;
+}
+
 
 function generateMarkdown(answers) {
    return `
+# ${answers.Title}
+
 ## Table of Contents
 [${answers.Installation}](#installation)
 
@@ -52,8 +63,6 @@ function generateMarkdown(answers) {
 [${answers.Contributing}](#contributing)
 
 [${answers.Tests}](#tests)
-
-# ${answers.Title}
 
 ## Description
 ${answers.Description}
@@ -71,7 +80,7 @@ ${answers.Contributing}
 ${answers.Tests}
 
 ## License
-${renderLicenseSection()}
+${renderLicenseSection(answers)}
 
 ## Questions?
     
