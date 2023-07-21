@@ -71,7 +71,7 @@ ${answers.Contributing}
 ${answers.Tests}
 
 ## License
-${renderLicenseSection}
+${renderLicenseSection()}
 
 ## Questions?
     
