@@ -1,26 +1,47 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(License) {
+   if(answers.License === 'Mozilla Public License 2.0') {
+      return `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)]`; 
+   } else if(answers.License === 'Apache License 2.0') {
+      return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]`;
+   } else if(answers.License === 'MIT License') {
+      return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]`;
+   } else {
+      return '';
+   }
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(License) {
+   if(answers.License === 'Mozilla Public License 2.0') {
+      return `(https://opensource.org/licenses/MPL-2.0)`; 
+   } else if(answers.License === 'Apache License 2.0') {
+      return `(https://opensource.org/licenses/Apache-2.0)`;
+   } else if(answers.License === 'MIT License') {
+      return `(https://opensource.org/licenses/MIT)`;
+   } else {
+      return '';
+   }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
+
 function generateMarkdown(answers) {
    return `
 ## Table of Contents
-${tocI}
+[${answers.Installation}](#installation)
 
-${tocU}
+[${answers.Usage}](#usage)
 
-${tocC}
+[${answers.Contributing}](#contributing)
 
-${tocT}
+[${answers.Tests}](#tests)
 
 # ${answers.Title}
 

@@ -51,7 +51,7 @@ inquirer
             type: 'list',
             message: 'Choose a License:',
             name: 'License',
-            choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
+            choices: ['Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License'],
         },
         {
             type: 'input',
@@ -82,27 +82,6 @@ inquirer
     writeReadMeFile(answers);
 });
 
-if (answers.Installation !== '') {
-    var tocI = `[Installation](#installation)`;
-    } else {
-    var tocI = '';
-    };
-if (answers.Usage !== '') {
-    var tocU = `[Usage](#usage)`;
-    } else {
-    var tocU = '';
-    };
-if (answers.Contributing !== '') {
-    var tocC = `[Contributing](#contributing)`;
-    } else {
-    var tocC = '';
-    };
-if (answers.Tests !== '') {
-        var tocT = `[Tests](#tests)`;
-    } else {
-        var tocT = '';
-    };
-module.exports = 
 
 function writeReadMeFile(answers) {
     // Convert the answers object to a string
