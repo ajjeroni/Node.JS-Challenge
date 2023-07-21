@@ -51,7 +51,7 @@ inquirer
             type: 'list',
             message: 'Choose a License:',
             name: 'License',
-            choices: ['Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License'],
+            choices: ['None', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License'],
         },
         {
             type: 'input',
