@@ -30,11 +30,11 @@ function renderLicenseLink(answers) {
 // If there is no license, return an empty string
 function renderLicenseSection(answers) {
    if(answers.License === 'Mozilla Public License 2.0') {
-      return `This project is licensed under the Mozilla Public license 2.0.`; 
+      return `This project is licensed under the terms of the Mozilla Public license 2.0.`; 
    } else if(answers.License === 'Apache License 2.0') {
-      return `This project is licensed under the Apache License 2.0.`;
+      return `This project is licensed under the terms of the Apache License 2.0.`;
    } else if(answers.License === 'MIT License') {
-      return `This project is licensed under the MIT license.`;
+      return `This project is licensed under the terms of the MIT license.`;
    } else {
       return 'This Project is not under any license';
    }
@@ -44,29 +44,31 @@ function renderLicenseSection(answers) {
 function tableOfContents(answers) {
    let tocString = ''
    if(answers.Description !== '') {
-      tocString += `[Description](#discription)\n` 
+      tocString += `[Description](#description)<br>` 
    }
    if(answers.Installation !== '') {
-      tocString += `[Installation Instructions](#installation-instructions)\n` 
+      tocString += `[Installation Instructions](#installation-instructions)<br>` 
    }
    if(answers.Usage !== '') {
-      tocString += `[Usage Information](#usage-information)\n` 
+      tocString += `[Usage Information](#usage-information)<br>` 
    }
    if(answers.Contributing !== '') {
-      tocString += `[Contribution Guidelines](#contribution-guidelines)\n` 
+      tocString += `[Contribution Guidelines](#contribution-guidelines)<br>` 
    }
    if(answers.Tests !== '') {
-      tocString += `[Test Instructions](#test-instructions)\n` 
+      tocString += `[Test Instructions](#test-instructions)<br>` 
    }
    if(answers.License !== '') {
-      tocString += `[License](#license)` 
+      tocString += `[License](#license)<br>` 
    }
    return tocString;
 }
 
 function generateMarkdown(answers) {
    return `
-# ${answers.Title}
+${renderLicenseBadge(answers)}
+
+# ${answers.Title}                                    
 
 ## Table of Contents
 ${tableOfContents(answers)}
@@ -88,7 +90,9 @@ ${answers.Contributing}
 ${answers.Tests}
 
 ## License
-${renderLicenseSection(answers)}
+${renderLicenseSection(answers)} 
+
+${renderLicenseLink(answers)}
 
 ## Questions?
     
