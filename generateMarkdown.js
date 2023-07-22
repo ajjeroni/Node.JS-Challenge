@@ -36,7 +36,7 @@ function renderLicenseSection(answers) {
    } else if(answers.License === 'MIT License') {
       return `This project is licensed under the MIT license.`;
    } else {
-      return 'This Project is not licensed';
+      return 'This Project is not under any license';
    }
 }
 
@@ -46,23 +46,31 @@ function tableOfContents(answers) {
    if(answers.Description !== '') {
       tocString += `[Description](#discription)\n` 
    }
-
+   if(answers.Installation !== '') {
+      tocString += `[Installation Instructions](#installation-instructions)\n` 
+   }
+   if(answers.Usage !== '') {
+      tocString += `[Usage Information](#usage-information)\n` 
+   }
+   if(answers.Contributing !== '') {
+      tocString += `[Contribution Guidelines](#contribution-guidelines)\n` 
+   }
+   if(answers.Tests !== '') {
+      tocString += `[Test Instructions](#test-instructions)\n` 
+   }
+   if(answers.License !== '') {
+      tocString += `[License](#license)` 
+   }
    return tocString;
 }
-
 
 function generateMarkdown(answers) {
    return `
 # ${answers.Title}
 
 ## Table of Contents
-[${answers.Installation}](#installation)
-
-[${answers.Usage}](#usage)
-
-[${answers.Contributing}](#contributing)
-
-[${answers.Tests}](#tests)
+${tableOfContents(answers)}
+[Questions](#questions?)
 
 ## Description
 ${answers.Description}
