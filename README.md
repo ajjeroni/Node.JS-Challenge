@@ -20,11 +20,11 @@ Once prompted to answer README questions, answer as you will.
 
 The README file will then be completed at the end of the prompts. 
 
-![alt text](https://github.com/ajjeroni/Node.js-Challenge-Professional-README-Generator/blob/a87243eba88d0ec84955c526dcc6c640db466d62/Screenshot%202023-05-14%20105722.png)
+![alt text](https://github.com/ajjeroni/Node.JS-Challenge/blob/2373dc01ba9911aaa873c271c9256ea70fe17c48/Screenshot%202023-07-22%20142719.png)
 
 ## Links
 
-Click this link to access [video](https://drive.google.com/file/d/1icSrTOWiL1lve88WU0sWeF4RuWVRXF_5/view)
+Click this link to access [video](https://drive.google.com/file/d/1f_G6JNWCaMRVtIDy97O0sGLkE9UnFeSI/view)
 
 ## Credits
 
